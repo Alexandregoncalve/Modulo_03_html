@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+</head>
+<body>
+    <h1>Formulário de Cadastro</h1>
+    <!DOCTYPE html>
+<html>
+<head>
+	<title>Exemplo de Restrição de Caracteres para o Campo de Nome</title>
+</head>
+<body>
+	<form>
+		<label for="nome">Nome:</label>
+		<input type="text" id="nome" name="nome" oninput="validarNome()"> <br />
+        <label for="e-mial">E-Mail</label>
+        <input type="email" name="email" placeholder="Digite seu e-mail"> <br />
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha"> <br />
+		<input type="submit" value="Cadastrar">
+        <input type="reset" value="Cancelar">
+        
+	</form>
+
+	<script>
+		function validarNome() {
+			let nome = document.getElementById("nome").value;
+			let pattern = /^[A-Za-z]+$/;
+			if (!pattern.test(nome)) {
+				document.getElementById("nome").setCustomValidity("Somente letras são permitidas no campo de nome.");
+			} else {
+				document.getElementById("nome").setCustomValidity("");
+			}
+		}
+	</script>
+</body>
+</html>
